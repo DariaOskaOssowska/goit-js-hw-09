@@ -12,7 +12,39 @@ body {
   line-height: 1.5;
 }
 
+#datetime-picker {
+  box-sizing: border-box;
+  font-size: large;
+  font-weight: bold;
+  font-size: large;
+}
+
+button {
+ font-size: large;
+}
+
 img {
   display: block;
   max-width: 100%;
+}
+
+.timer {
+  display: flex;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.value {
+  font-size: xxx-large;
+}
+
+.label {
+  font-weight: bold;
+  text-transform: uppercase;
 }
