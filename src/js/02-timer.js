@@ -55,6 +55,7 @@ function addLeadingZero(value) {
 btnStart.addEventListener('click', () => {
   let timer = setInterval(() => {
     let countdown = new Date(text.value) - new Date();
+    btnStart.disabled = true;
     if (countdown >= 0) {
       let timeObject = convertMs(countdown);
       days.textContent = addLeadingZero(timeObject.days);
@@ -66,9 +67,8 @@ btnStart.addEventListener('click', () => {
       }
     } else {
       Notiflix.Notify.success('Countdown finished');
-      timerHtml.style.color='black'
+      timerHtml.style.color = 'black';
       clearInterval(timer);
     }
-    
   }, 1000);
 });
