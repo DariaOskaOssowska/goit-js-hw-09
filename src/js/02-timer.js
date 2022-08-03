@@ -3,6 +3,7 @@ import 'flatpickr/dist/flatpickr.min.css';
 import Notiflix from 'notiflix';
 
 const text = document.querySelector('#datetime-picker');
+const timerHtml = document.querySelector('.timer');
 const btnStart = document.querySelector('button[data-start]');
 const seconds = document.querySelector('span[data-seconds]');
 const minutes = document.querySelector('span[data-minutes]');
@@ -60,9 +61,14 @@ btnStart.addEventListener('click', () => {
       hours.textContent = addLeadingZero(timeObject.hours);
       minutes.textContent = addLeadingZero(timeObject.minutes);
       seconds.textContent = addLeadingZero(timeObject.seconds);
+      if (countdown <= 10000) {
+        timerHtml.style.color = 'tomato';
+      }
     } else {
-        Notiflix.Notify.success('Countdown finished');
-        clearInterval(timer);
+      Notiflix.Notify.success('Countdown finished');
+      timerHtml.style.color='black'
+      clearInterval(timer);
     }
+    
   }, 1000);
 });
